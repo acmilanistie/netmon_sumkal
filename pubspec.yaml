@@ -1,0 +1,25 @@
+name: netmon_sumkal
+version: 1.0.0+1
+publish_to: none
+description: Netmon Sumkal.
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  get: 4.3.6
+  firebase_core: ^1.3.0
+  cloud_firestore: ^2.4.0
+  shared_preferences: 0.5.3+4
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  lints: 1.0.1
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
