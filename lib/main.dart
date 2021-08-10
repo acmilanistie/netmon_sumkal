@@ -12,28 +12,31 @@ void main() async {
   HomeBinding().dependencies();
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "Netmon Sumkal",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData.dark().copyWith(
-        accentColor: Colors.yellow,
-        primaryColor: Color(0xff141A31),
-        primaryColorDark: Color(0xff081029),
-        scaffoldBackgroundColor: Color(0xff141A31),
-        textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.yellow),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+      theme: ThemeData(
+          primarySwatch: Colors.cyan,
+          accentColor: Color(0xff00DAD2),
+          fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
+                button: TextStyle(color: Colors.white),
               ),
-              backgroundColor: MaterialStateProperty.all(Colors.yellowAccent),
-              padding: MaterialStateProperty.all(EdgeInsets.all(14))),
-        ),
-      ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          )),
     ),
   );
 }

@@ -1,20 +1,17 @@
 import 'package:get/get.dart';
+import 'package:netmon_sumkal/helper/user_preference.dart';
+import '../../../../routes.dart';
 
 class AwalController extends GetxController {
-  //TODO: Implement AwalController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  var sudahLogin = 0.obs;
+  pilihSplashScreen() async {
+    UserPreference.getCredentialUser().then((value) {
+      if (value["username"] == null) {
+        Get.offNamed(RouterGenerator.routeSplashPertama);
+      } else {
+        Get.offNamed(RouterGenerator.routeSplashKedua);
+        sudahLogin++;
+      }
+    });
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

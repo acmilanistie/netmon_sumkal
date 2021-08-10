@@ -1,20 +1,15 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
+import 'package:netmon_sumkal/helper/user_preference.dart';
+
+import '../../../../routes.dart';
 
 class SplashScreenPertamaController extends GetxController {
-  //TODO: Implement SplashScreenPertamaController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  startSplashScreenPertama() {
+    var duration = const Duration(seconds: 2);
+    return Timer(duration, () {
+      Get.offNamed(RouterGenerator.routeLogin);
+    });
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

@@ -5,17 +5,23 @@ import 'package:get/get.dart';
 import '../controllers/splash_screen_pertama_controller.dart';
 
 class SplashScreenPertamaView extends GetView<SplashScreenPertamaController> {
+  SplashScreenPertamaController controller =
+      Get.find<SplashScreenPertamaController>();
   @override
   Widget build(BuildContext context) {
+    controller.startSplashScreenPertama();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('SplashScreenPertamaView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'SplashScreenPertamaView is working',
-          style: TextStyle(fontSize: 20),
+      body: Container(
+        color: Colors.red,
+        child: Center(
+          child: Text(
+            "Splash ke Login",
+            style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Pacifico'),
+          ),
         ),
       ),
     );
