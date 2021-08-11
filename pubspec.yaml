@@ -14,6 +14,8 @@ dependencies:
   cloud_firestore: ^2.4.0
   shared_preferences: ^2.0.6
   font_awesome_flutter: ^9.1.0
+  convex_bottom_bar: ^3.0.0
+  double_back_to_close_app: ^2.0.1
   lottie: ^1.1.0
   flutter:
     sdk: flutter
@@ -28,6 +30,13 @@ flutter:
   assets:
     - assets/images/
     - assets/images/pln.json
+    - assets/images/senin.json
+    - assets/images/selasa.json
+    - assets/images/rabu.json
+    - assets/images/kamis.json
+    - assets/images/jumat.json
+    - assets/images/sabtu.json
+    - assets/images/ahad.json
   fonts:
     - family: OpenSans
       fonts:

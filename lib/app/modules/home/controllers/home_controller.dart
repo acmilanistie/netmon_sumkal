@@ -1,20 +1,22 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netmon_sumkal/helper/user_preference.dart';
-import '/app/models/firebase_unit_model.dart';
-import '/app/routes/app_pages.dart';
+import '/app/modules/home/views/page_satu_bawah_view.dart';
 
 class HomeController extends GetxController {
-  RxList<FirebaseUnitModel> units = RxList<FirebaseUnitModel>([]);
-  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-  late CollectionReference collectionReference;
-  var sisaSession = 0;
+  List<Widget> listWidgets = [
+    PageSatuBawahView(),
+    Text('2'),
+    Text('3'),
+    Text('4'),
+  ];
+  var currentIndex = 0.obs;
+  GlobalKey bottomNavigationKey = GlobalKey();
+  late PageController pageController;
+
   @override
   void onInit() {
     super.onInit();
-    collectionReference = firebaseFirestore.collection('units');
-    units.bindStream(getUnitFireStore());
-    cekTanggalPref();
+    pageController = PageController();
   }
 
   @override
@@ -23,22 +25,7 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onClose() {}
-
-  Stream<List<FirebaseUnitModel>> getUnitFireStore() => collectionReference
-      .where('aktif', isEqualTo: '1')
-      .snapshots()
-      .map((query) =>
-          query.docs.map((item) => FirebaseUnitModel.fromMap(item)).toList());
-
-  cekTanggalPref() async {
-    UserPreference.getCredentialUser().then((value) {
-      // var tanggalLogin = DateTime.parse(value["tgl_login"]);
-      var tanggalLogin = DateTime.parse('2021-08-09 17:01:23.474241');
-      var tanggalSekarang = DateTime.now();
-      var selisihTanggal = tanggalSekarang.difference(tanggalLogin).inDays;
-      sisaSession = 30 - selisihTanggal;
-      update();
-    });
+  void onClose() {
+    pageController.dispose();
   }
 }

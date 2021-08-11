@@ -1,7 +1,13 @@
 import 'package:get/get.dart';
 
+import 'package:netmon_sumkal/app/modules/home/bindings/app_widget_binding.dart';
+import 'package:netmon_sumkal/app/modules/home/views/app_widget_view.dart';
 import 'package:netmon_sumkal/app/modules/home/bindings/halaman_login_binding.dart';
+import 'package:netmon_sumkal/app/modules/home/bindings/page_satu_atas_binding.dart';
+import 'package:netmon_sumkal/app/modules/home/bindings/page_satu_bawah_binding.dart';
 import 'package:netmon_sumkal/app/modules/home/views/halaman_login_view.dart';
+import 'package:netmon_sumkal/app/modules/home/views/page_satu_atas_view.dart';
+import 'package:netmon_sumkal/app/modules/home/views/page_satu_bawah_view.dart';
 
 import '/app/modules/home/bindings/awal_binding.dart';
 import '/app/modules/home/bindings/home_binding.dart';
@@ -44,6 +50,21 @@ class AppPages {
       name: _Paths.HALAMAN_LOGIN,
       page: () => HalamanLoginView(),
       binding: HalamanLoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAGE_SATU_BAWAH,
+      page: () => PageSatuBawahView(),
+      binding: PageSatuBawahBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAGE_SATU_ATAS,
+      page: () => PageSatuAtasView(),
+      binding: PageSatuAtasBinding(),
+    ),
+    GetPage(
+      name: _Paths.APP_WIDGET,
+      page: () => AppWidgetView(),
+      binding: AppWidgetBinding(),
     ),
   ];
 }
