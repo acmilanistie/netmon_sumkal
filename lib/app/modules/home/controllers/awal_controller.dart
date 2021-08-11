@@ -9,8 +9,8 @@ class AwalController extends GetxController {
       if (value["username"] == null) {
         Get.offNamed(RouterGenerator.routeSplashPertama);
       } else {
-        Get.offNamed(RouterGenerator.routeSplashKedua);
         sudahLogin++;
+        Get.offNamed(RouterGenerator.routeSplashKedua);
       }
     });
   }

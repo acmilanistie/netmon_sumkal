@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import '../controllers/splash_screen_pertama_controller.dart';
 
 class SplashScreenPertamaView extends GetView<SplashScreenPertamaController> {
-  SplashScreenPertamaController controller =
-      Get.find<SplashScreenPertamaController>();
   @override
   Widget build(BuildContext context) {
     controller.startSplashScreenPertama();

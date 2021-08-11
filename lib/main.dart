@@ -23,8 +23,7 @@ void main() async {
           textTheme: ThemeData.light().textTheme.copyWith(
                 headline6: TextStyle(
                   fontFamily: 'OpenSans',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
                 button: TextStyle(color: Colors.white),
               ),

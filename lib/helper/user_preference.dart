@@ -6,10 +6,10 @@ class UserPreference {
   ///fungsi untuk menyimpan user session untuk nama email dan token untuk request api
   static Future<void> setCredentialUser(Map<String, dynamic> data) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString("token", data["token"]);
-    preferences.setString("email", data["email"]);
-    preferences.setString("name", data["name"]);
-    preferences.setString("id", data["id"]);
+    preferences.setString("username", data["username"]);
+    preferences.setString("nama", data["nama"]);
+    preferences.setString("leveluser", data["leveluser"]);
+    preferences.setString("emailuser", data["emailuser"]);
     preferences.setString("tgl_login", DateTime.now().toString());
   }
 
@@ -22,10 +22,10 @@ class UserPreference {
   static Future<Map<String, dynamic>> getCredentialUser() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     Map<String, dynamic> userCredential = {
-      "id": preferences.getString("id"),
-      "token": preferences.getString("token"),
-      "name": preferences.getString("name"),
-      "email": preferences.getString("email"),
+      "username": preferences.getString("username"),
+      "nama": preferences.getString("nama"),
+      "leveluser": preferences.getString("leveluser"),
+      "emailuser": preferences.getString("emailuser"),
       "tgl_login": preferences.getString("tgl_login"),
     };
     return userCredential;

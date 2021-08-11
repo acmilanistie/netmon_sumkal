@@ -9,7 +9,7 @@ class SplashScreenPertamaController extends GetxController {
   startSplashScreenPertama() {
     var duration = const Duration(seconds: 2);
     return Timer(duration, () {
-      Get.offNamed(RouterGenerator.routeLogin);
+      Get.offNamed(RouterGenerator.halamanLogin);
     });
   }
 }

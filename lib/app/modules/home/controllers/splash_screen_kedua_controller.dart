@@ -1,20 +1,14 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 
+import '../../../../routes.dart';
+
 class SplashScreenKeduaController extends GetxController {
-  //TODO: Implement SplashScreenKeduaController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  startSplashScreenKedua() {
+    var duration = const Duration(seconds: 2);
+    return Timer(duration, () {
+      Get.offNamed(RouterGenerator.routeHome);
+    });
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

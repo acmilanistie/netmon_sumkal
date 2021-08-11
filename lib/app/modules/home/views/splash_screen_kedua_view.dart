@@ -7,6 +7,7 @@ import '../controllers/splash_screen_kedua_controller.dart';
 class SplashScreenKeduaView extends GetView<SplashScreenKeduaController> {
   @override
   Widget build(BuildContext context) {
+    controller.startSplashScreenKedua();
     return Scaffold(
       appBar: AppBar(
         title: Text('SplashScreenKeduaView'),
